@@ -1,6 +1,10 @@
 function FindProxyForURL(url, host) {
-  if (host === "test-portal.antarpreetbajwa.xyz") {
-    return "PROXY 127.0.0.1:9";
+
+  // Route ONLY your test app via Google Gateway
+  if (dnsDomainIs(host, "test-portal.antarpreetbajwa.xyz")) {
+    return "HTTPS training-gateway";
   }
+
+  // Everything else goes direct
   return "DIRECT";
 }
