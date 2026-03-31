@@ -1,9 +1,6 @@
 function FindProxyForURL(url, host) {
-    if (
-        host === "test-portal.antarpreetbajwa.xyz" ||
-        shExpMatch(host, "*.antarpreetbajwa.xyz")
-    ) {
-        return "HTTPS via.prod.securegateway.goog:443";
-    }
-    return "DIRECT";
+  if (host === "test-portal.antarpreetbajwa.xyz") {
+    return "PROXY 127.0.0.1:9";
+  }
+  return "DIRECT";
 }
