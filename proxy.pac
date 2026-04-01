@@ -1,7 +1,7 @@
 function FindProxyForURL(url, host) {
 
-  if (dnsDomainIs(host, "test-portal.antarpreetbajwa.xyz")) {
-    return "HTTPS 0.0.0.0:443";
+  if (dnsDomainIs(host, "debug-portal.antarpreetbajwa.xyz")) {
+    return "HTTPS via.prod.securegateway.goog:443";
   }
 
   return "DIRECT";
